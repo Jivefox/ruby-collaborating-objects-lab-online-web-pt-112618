@@ -1,4 +1,3 @@
-require 'pry'
 class MP3Importer
 
   attr_accessor :path
@@ -8,8 +7,8 @@ class MP3Importer
   end
 
   def files
-    @files ||= Dir["#{path}/*mp3"]
-    # .collect {|file| file.gsub("#{path}/","")}
+    @files ||= Dir["#{path}/*mp3"].collect {|file| file.gsub("#{path}/","")}
+    @files ||= Dir["#{path}/*mp3"].collect {|file| file.gsub("#{path}/","")}
   end
 
   def import
